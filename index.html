@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DocSearch Pro — instant full-text search across your document library" />
+  <title>DocSearch Pro</title>
+
+  <!-- Geist fonts via CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon inline SVG -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23e4e4e7'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='14' font-weight='700' fill='%2318181b'%3EDS%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════ HEADER ══════════════════════════════ -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <div class="brand" aria-label="DocSearch Pro home">
+      <div class="brand-icon" aria-hidden="true">DS</div>
+      <div class="brand-text">
+        <span class="brand-name">DocSearch Pro</span>
+        <span class="brand-tagline">instant full-text search</span>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <button class="version-tag" id="changelog-btn" aria-expanded="false" aria-controls="changelog-panel" title="View changelog">
+        v1.0.0
+      </button>
+
+      <button class="btn--icon" id="theme-toggle" aria-label="Toggle colour scheme" title="Toggle theme">
+        <!-- Sun (shown in light mode) -->
+        <svg class="icon-sun" aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- Moon (shown in dark mode) -->
+        <svg class="icon-moon" aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+        <span class="theme-toggle-label">
+          <span class="label-dark">Dark</span>
+          <span class="label-light">Light</span>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ════════════════════════════ CHANGELOG PANEL ════════════════════════ -->
+<div class="changelog-panel" id="changelog-panel" hidden role="region" aria-label="Changelog">
+  <div class="changelog-inner">
+    <div class="changelog-header">
+      <div class="changelog-title">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+        Changelog
+      </div>
+      <a href="https://github.com/luke-pekala/doc-search-pro/releases" target="_blank" rel="noopener" class="changelog-gh-link" aria-label="View full changelog on GitHub">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+    <div class="changelog-content" role="list">
+      <div class="changelog-release" role="listitem">
+        <div class="changelog-release-header">
+          <span class="changelog-version">v1.0.0</span>
+          <span class="changelog-date">2025-04-03</span>
+          <span class="changelog-latest-badge">latest</span>
+        </div>
+        <ul class="changelog-items">
+          <li class="changelog-item">Initial release — full-text document search engine</li>
+          <li class="changelog-item">Drag-and-drop + paste document ingestion</li>
+          <li class="changelog-item">Live search with relevance ranking and snippet highlighting</li>
+          <li class="changelog-item">Stats bar: docs indexed, total words, avg match score</li>
+          <li class="changelog-item">Export results as JSON or plain text</li>
+          <li class="changelog-item">Dark / light theme with smooth transitions</li>
+          <li class="changelog-item">Zero-dependency — pure vanilla JS + CSS</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ APP SHELL ════════════════════════════ -->
+<main class="app-shell" role="main" id="app-shell">
+
+  <!-- ── LEFT PANE: INPUT ─────────────────────────────────────── -->
+  <section class="pane pane--input" aria-labelledby="input-pane-title">
+
+    <div class="pane-header">
+      <h2 class="pane-title" id="input-pane-title">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Document Library
+        <span class="pane-step" id="doc-count-badge">0 docs</span>
+      </h2>
+      <div style="display:flex;gap:0.4rem;align-items:center;">
+        <button class="btn btn--ghost" id="clear-all-btn" title="Clear all documents" disabled aria-label="Clear all documents">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg>
+          Clear
+        </button>
+      </div>
+    </div>
+
+    <!-- Drop zone -->
+    <div class="drop-zone" id="drop-zone" role="button" tabindex="0" aria-label="Drop documents here or click to browse files">
+      <div class="drop-zone-inner" id="drop-zone-inner">
+        <svg class="drop-zone-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        <p class="drop-zone-text">Drop <code>.txt</code>, <code>.md</code>, or <code>.csv</code> files</p>
+        <p class="drop-zone-subtext">or paste text · or click to browse</p>
+        <input type="file" id="file-input" multiple accept=".txt,.md,.csv,.log,.json" class="sr-only" tabindex="-1" aria-label="File input" />
+      </div>
+    </div>
+
+    <!-- Document list -->
+    <div class="doc-list-wrap" id="doc-list-wrap" hidden>
+      <ul class="doc-list" id="doc-list" role="list" aria-label="Indexed documents"></ul>
+    </div>
+
+    <!-- Paste area toggle -->
+    <div class="paste-toggle-wrap">
+      <button class="btn btn--ghost paste-toggle-btn" id="paste-toggle-btn" aria-expanded="false" aria-controls="paste-area">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2h-3"/></svg>
+        Paste text
+        <svg class="paste-toggle-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+
+    <div class="paste-area" id="paste-area" hidden>
+      <div class="field-group" style="border-bottom:none;">
+        <label class="field-label" for="paste-title">Document name <span class="required-star" aria-hidden="true">*</span></label>
+        <input type="text" class="field-input" id="paste-title" placeholder="e.g. meeting-notes.txt" autocomplete="off" spellcheck="false" />
+      </div>
+      <div class="field-group" style="border-bottom:none;padding-top:0;">
+        <label class="field-label" for="paste-content">Content <span class="required-star" aria-hidden="true">*</span></label>
+        <textarea class="field-textarea" id="paste-content" placeholder="Paste or type document content here…" rows="5" spellcheck="false"></textarea>
+      </div>
+      <div class="input-actions">
+        <button class="btn btn--primary" id="add-paste-btn">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Document
+        </button>
+        <button class="btn btn--ghost" id="cancel-paste-btn">Cancel</button>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div id="stats-bar" role="region" aria-label="Index statistics">
+      <div class="stat stat--words">
+        <span class="stat-value" id="stat-docs" aria-label="Documents indexed">0</span>
+        <span class="stat-label">Docs</span>
+      </div>
+      <div class="stat stat--lines">
+        <span class="stat-value" id="stat-words" aria-label="Total words indexed">0</span>
+        <span class="stat-label">Words</span>
+      </div>
+      <div class="stat stat--sections">
+        <span class="stat-value" id="stat-tokens" aria-label="Unique tokens in index">0</span>
+        <span class="stat-label">Tokens</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── RIGHT PANE: SEARCH ───────────────────────────────────── -->
+  <section class="pane pane--output" aria-labelledby="search-pane-title">
+
+    <div class="pane-header">
+      <h2 class="pane-title" id="search-pane-title">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Search
+        <span class="live-dot" aria-hidden="true" id="live-dot" style="display:none;"></span>
+      </h2>
+      <div style="display:flex;gap:0.4rem;align-items:center;">
+        <button class="btn btn--copy" id="export-btn" disabled aria-label="Export results">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export
+        </button>
+        <button class="btn btn--copy" id="copy-btn" disabled aria-label="Copy results to clipboard">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy
+        </button>
+      </div>
+    </div>
+
+    <!-- Search input -->
+    <div class="search-input-wrap">
+      <svg class="search-input-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input
+        type="search"
+        class="search-input"
+        id="search-input"
+        placeholder="Search documents…"
+        autocomplete="off"
+        autocorrect="off"
+        spellcheck="false"
+        aria-label="Search query"
+        aria-controls="search-results"
+        aria-autocomplete="list"
+      />
+      <button class="search-clear-btn" id="search-clear-btn" aria-label="Clear search" hidden>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="filter-bar" id="filter-bar">
+      <div class="filter-group">
+        <label class="filter-label" for="filter-doc">Filter by doc</label>
+        <select class="field-select filter-select" id="filter-doc" aria-label="Filter results by document">
+          <option value="">All documents</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label class="filter-label" for="sort-by">Sort by</label>
+        <select class="field-select filter-select" id="sort-by" aria-label="Sort results by">
+          <option value="score">Relevance</option>
+          <option value="doc">Document</option>
+          <option value="pos">Position</option>
+        </select>
+      </div>
+      <div class="filter-group filter-group--right">
+        <label class="filter-label filter-label--checkbox">
+          <input type="checkbox" id="whole-word" class="filter-checkbox" aria-label="Match whole words only" />
+          <span>Whole word</span>
+        </label>
+        <label class="filter-label filter-label--checkbox">
+          <input type="checkbox" id="case-sensitive" class="filter-checkbox" aria-label="Case sensitive search" />
+          <span>Case sensitive</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div id="search-results" class="results-scroll" role="region" aria-label="Search results" aria-live="polite">
+      <div class="preview-empty" id="results-empty">
+        <svg class="preview-empty-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <p id="empty-message">Add documents to get started, then type a query above.</p>
+      </div>
+      <ul class="result-list" id="result-list" role="list" aria-label="Search result items"></ul>
+    </div>
+
+    <!-- Result stats footer -->
+    <div class="result-footer" id="result-footer" hidden>
+      <span id="result-count-text" class="result-count-text"></span>
+      <span id="result-time-text" class="result-time-text"></span>
+    </div>
+
+  </section>
+</main>
+
+<!-- ══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <p>DocSearch Pro — client-side, zero-dependency, privacy-first</p>
+    <a href="https://github.com/luke-pekala/doc-search-pro" target="_blank" rel="noopener" class="footer-link" aria-label="View on GitHub">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      luke-pekala/doc-search-pro
+    </a>
+  </div>
+</footer>
+
+<script src="src/search-engine.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>
